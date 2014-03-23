@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/garyjohnson/objection-kiwi"
-  s.license      = 'MIT (example)'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { "Gary Johnson" => "gary@gjtt.com" }
   s.social_media_url = "http://twitter.com/GaryGJohnson"
 
@@ -20,7 +20,9 @@ Pod::Spec.new do |s|
   s.public_header_files = '*.h'
   s.requires_arc = true
 
-  s.dependency 'Objection'
+  s.framework = 'XCTest', 'Foundation'
+
   s.dependency 'Kiwi/XCTest'
+  s.dependency 'Objection'
 
 end
