@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.social_media_url = "http://twitter.com/GaryGJohnson"
 
   s.platform     = :ios, '7.0'
-  s.source       = { :git => "https://github.com/garyjohnson/okspechelper.git", :tag => "0.1" }
+  s.source       = { :git => "https://github.com/garyjohnson/okspechelper.git", :tag => "0.2" }
 
   s.source_files  = '*.{h,m}'
   s.public_header_files = '*.h'
