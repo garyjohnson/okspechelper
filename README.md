@@ -5,7 +5,7 @@ Simple helpers for using Objection framework with Kiwi tests.
 Currently targets iOS 7 with XCTest.
 
 # Installing
-To install using Cocoapods, include objection-kiwi in your Podfile, but only for your test targets:
+To install using Cocoapods, include OKSpecHelper in your Podfile, but only for your test targets:
 
 ```
 target :'myTests', :exclusive => true do
