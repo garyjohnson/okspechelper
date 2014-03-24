@@ -7,7 +7,7 @@ Currently targets iOS 7 with XCTest.
 # Installing
 To install using Cocoapods, include OKSpecHelper in your Podfile, but only for your test targets:
 
-```
+```ruby
 target :'myTests', :exclusive => true do
   pod 'OKSpecHelper'
 end
@@ -18,7 +18,7 @@ Set up Objection how you normally would for your targets.
 
 Create an JSObjectionModule for binding your classes to mocks. Include any dependency that would normally be injected by Objection that you are going to need to mock during test.
 
-```
+```objective-c
 @interface TestInjectionModule : JSObjectionModule
 @end
 
@@ -34,13 +34,13 @@ Create an JSObjectionModule for binding your classes to mocks. Include any depen
 
 In each spec, instead of using ```SPEC_BEGIN```, use ```SPEC_BEGIN_WITH_INJECTION```, like so. Note the second parameter, which is the name of the mock injection module.
 
-```
+```objective-c
 SPEC_BEGIN_WITH_INJECTION(GBGameSpec, TestInjectionModule)
 ```
 
 Set up the thing you're testing and be sure to call injectDependencies on it, since Objection won't be creating it for you:
 
-```
+```objective-c
 SPEC_BEGIN_WITH_INJECTION(GBGameSpec, TestInjectionModule)
 
         describe(@"GBGame", ^{
@@ -60,7 +60,7 @@ SPEC_BEGIN_WITH_INJECTION(GBGameSpec, TestInjectionModule)
 
 Finally, you can get ahold of your mocks by using ```injector``` (```[JSObjection defaultInjector]``` also works fine). I usually retrieve and store them in the beforeEach, like so:
 
-```
+```objective-c
 #import "Kiwi.h"
 #import "JSObjection.h"
 #import "GBGame.h"
