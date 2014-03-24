@@ -1,7 +1,7 @@
 OKSpecHelper
 ==============
 
-Simple helpers for using Objection framework with Kiwi tests. Tries to stay out of the way of normal Objection and Kiwi syntax and usage.
+Simple helpers for using [Objection](https://github.com/atomicobject/objection) to inject mocks for [Kiwi](https://github.com/allending/Kiwi) tests. Tries to stay out of the way of normal Objection and Kiwi syntax and usage.
 Currently targets iOS 7 with XCTest.
 
 # Installing
