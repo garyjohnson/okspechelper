@@ -1,6 +1,9 @@
 #import "OKSpecHelpers.h"
 
-void UseTestModuleForInjection(JSObjectionModule *testModule) {
-    JSObjectionInjector *injector = [JSObjection createInjector:testModule];
-    [JSObjection setDefaultInjector:injector];
+NSObject* UseTestModuleForInjection(NSObject *testModule) {
+    
+    NSObject *objection = NSClassFromString(@"JSObjection");
+    NSObject *injector = [objection performSelector:@selector(createInjector:) withObject:testModule];
+    [objection performSelector:@selector(setDefaultInjector:) withObject:injector];
+    return injector;
 }

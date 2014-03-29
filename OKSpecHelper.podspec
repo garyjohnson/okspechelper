@@ -23,6 +23,5 @@ Pod::Spec.new do |s|
   s.framework = 'XCTest', 'Foundation'
 
   s.dependency 'Kiwi/XCTest'
-  s.dependency 'Objection'
 
 end

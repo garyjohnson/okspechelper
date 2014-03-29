@@ -1,11 +1,11 @@
 #import "NSObject+OKInjection.h"
-#import "JSObjection.h"
 
 @implementation NSObject (OKInjection)
 
 - (void)injectDependencies {
-    JSObjectionInjector *injector = [JSObjection defaultInjector];
-    [injector injectDependencies:self];
+    NSObject *objection = NSClassFromString(@"JSObjection");
+    NSObject *injector = [objection performSelector:@selector(defaultInjector)];
+    [injector performSelector:@selector(injectDependencies) withObject:self];
 }
 
 @end

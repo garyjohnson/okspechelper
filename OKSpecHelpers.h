@@ -1,16 +1,14 @@
-#import "JSObjection.h"
 #import "Kiwi.h"
 
-void UseTestModuleForInjection(JSObjectionModule *testModule);
+NSObject* UseTestModuleForInjection(NSObject *testModule);
 
 #define SPEC_BEGIN_WITH_INJECTION(name, objectionTestModule) \
     SPEC_BEGIN(name) \
     \
-    __block JSObjectionInjector *injector; \
+    __block NSObject *injector; \
     \
     beforeEach(^{ \
-        UseTestModuleForInjection([[objectionTestModule alloc] init]); \
-        injector = [JSObjection defaultInjector]; \
+        injector = UseTestModuleForInjection([[objectionTestModule alloc] init]); \
     }); \
     \
 
