@@ -58,7 +58,7 @@ SPEC_BEGIN_WITH_INJECTION(GBGameSpec, TestInjectionModule)
  SPEC_END
 ```
 
-Finally, you can get ahold of your mocks by using ```injector``` (```[JSObjection defaultInjector]``` also works fine). I usually retrieve and store them in the beforeEach, like so:
+Finally, you can get ahold of your mocks by using ```getDependency(<class or protocol>)```. I usually retrieve and store them in the beforeEach, like so:
 
 ```objective-c
 #import "Kiwi.h"
@@ -75,7 +75,7 @@ SPEC_BEGIN_WITH_INJECTION(GBGameSpec, TestInjectionModule)
             __block NSNotificationCenter *notificationCenterMock;
 
             beforeEach(^{
-                notificationCenterMock = [injector getObject:[NSNotificationCenter class]];
+                notificationCenterMock = getDependency([NSNotificationCenter class]);
 
                 game = [[GBGame alloc] init];
                 [game injectDependencies];
