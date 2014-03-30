@@ -3,9 +3,9 @@
 @implementation NSObject (OKInjection)
 
 - (void)injectDependencies {
-    NSObject *objection = NSClassFromString(@"JSObjection");
-    NSObject *injector = [objection performSelector:@selector(defaultInjector)];
-    [injector performSelector:@selector(injectDependencies) withObject:self];
+    id objection = NSClassFromString(@"JSObjection");
+    id injector = [objection performSelector:@selector(defaultInjector)];
+    [injector performSelector:@selector(injectDependencies:) withObject:self];
 }
 
 @end
