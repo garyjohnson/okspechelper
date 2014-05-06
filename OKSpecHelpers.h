@@ -7,6 +7,7 @@ id UseTestModuleForInjection(id testModule);
     \
     __block id injector; \
     \
+    #pragma unused(getDependency) \
     __block id (^getDependency)(id) = ^id(id classOrProtocol) { \
       return [injector performSelector:@selector(getObject:) withObject:classOrProtocol]; \
     }; \
