@@ -7,12 +7,12 @@ id UseTestModuleForInjection(id testModule);
     \
     __block id injector; \
     \
-    #pragma unused(getDependency) \
     __block id (^getDependency)(id) = ^id(id classOrProtocol) { \
       return [injector performSelector:@selector(getObject:) withObject:classOrProtocol]; \
     }; \
     \
     beforeEach(^{ \
+        [NSString stringWithFormat:@"%@", getDependency]; \
         injector = UseTestModuleForInjection([[objectionTestModule alloc] init]); \
     }); \
     \
