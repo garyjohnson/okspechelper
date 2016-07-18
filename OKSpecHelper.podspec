@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author             = { "Gary Johnson" => "gary@gjtt.com" }
   s.social_media_url = "http://twitter.com/GaryGJohnson"
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '9.0'
   s.source       = { :git => "https://github.com/garyjohnson/okspechelper.git", :tag => "0.7" }
 
   s.source_files  = '*.{h,m}'
@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
 
   s.framework = 'XCTest', 'Foundation'
 
-  s.dependency 'Kiwi/XCTest'
+  s.dependency 'Kiwi'
 
 end
